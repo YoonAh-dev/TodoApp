@@ -11,12 +11,7 @@ class TodoViewController: UITableViewController {
 
     typealias TodoToggableServie = TodoService & Toggable
 
-    var service: TodoToggableServie
-
-    required init?(coder: NSCoder) {
-        self.service = TodoServiceImpl(repository: UserDefaultRepository())
-        super.init(coder: coder)
-    }
+    let service: TodoToggableServie = Inject(TodoToggableServie.self)!
 
     override func viewDidLoad() {
         super.viewDidLoad()

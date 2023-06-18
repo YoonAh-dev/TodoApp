@@ -23,6 +23,7 @@
 		B5F4ED352A3EE656006AECE0 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4ED342A3EE656006AECE0 /* Todo.swift */; };
 		B5F4ED372A3EE9EE006AECE0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4ED362A3EE9EE006AECE0 /* Repository.swift */; };
 		B5F4ED392A3EEB8F006AECE0 /* UserDefaultRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4ED382A3EEB8F006AECE0 /* UserDefaultRepository.swift */; };
+		B5F4ED3C2A3EF584006AECE0 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B5F4ED3B2A3EF584006AECE0 /* Swinject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F4ED3C2A3EF584006AECE0 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +214,9 @@
 			dependencies = (
 			);
 			name = TodoApp;
+			packageProductDependencies = (
+				B5F4ED3B2A3EF584006AECE0 /* Swinject */,
+			);
 			productName = TodoApp;
 			productReference = B5F4ECF32A3EA513006AECE0 /* TodoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +289,9 @@
 				Base,
 			);
 			mainGroup = B5F4ECEA2A3EA513006AECE0;
+			packageReferences = (
+				B5F4ED3A2A3EF584006AECE0 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = B5F4ECF42A3EA513006AECE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -672,6 +680,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5F4ED3A2A3EF584006AECE0 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5F4ED3B2A3EF584006AECE0 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5F4ED3A2A3EF584006AECE0 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5F4ECEB2A3EA513006AECE0 /* Project object */;
 }
