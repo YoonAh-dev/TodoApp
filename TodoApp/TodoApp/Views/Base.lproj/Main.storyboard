@@ -7,22 +7,65 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Todo View Controller-->
         <scene sceneID="3Yc-bp-JbG">
             <objects>
-                <tableViewController id="Cxa-o1-4D8" customClass="ViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Cxa-o1-4D8" customClass="TodoViewController" customModule="TodoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Lox-cC-C4b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RXf-84-JCS">
+                            <rect key="frame" x="0.0" y="224" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                            <connections>
+                                <action selector="onCreateTodo:" destination="Cxa-o1-4D8" eventType="touchUpInside" id="g8y-Ew-PID"/>
+                            </connections>
+                        </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Vmt-8y-DIc">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoTableViewCell" rowHeight="146" id="Vmt-8y-DIc" customClass="TodoTableViewCell" customModule="TodoApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vmt-8y-DIc" id="SYI-El-d8a">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfq-UG-zTj">
+                                            <rect key="frame" x="20" y="20" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfl-kD-e1N">
+                                            <rect key="frame" x="20" y="51" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnf-xR-wnZ">
+                                            <rect key="frame" x="324" y="20" width="51" height="65"/>
+                                            <connections>
+                                                <action selector="onToggle:" destination="Vmt-8y-DIc" eventType="valueChanged" id="z89-yN-dK7"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xfl-kD-e1N" firstAttribute="leading" secondItem="SYI-El-d8a" secondAttribute="leading" constant="20" id="18i-6J-SVt"/>
+                                        <constraint firstAttribute="trailing" secondItem="rnf-xR-wnZ" secondAttribute="trailing" constant="20" id="Lce-7r-qhX"/>
+                                        <constraint firstItem="rnf-xR-wnZ" firstAttribute="top" secondItem="SYI-El-d8a" secondAttribute="top" constant="20" id="TgG-YM-z19"/>
+                                        <constraint firstItem="xfl-kD-e1N" firstAttribute="top" secondItem="xfq-UG-zTj" secondAttribute="bottom" constant="10" id="V7j-rz-oI2"/>
+                                        <constraint firstItem="xfq-UG-zTj" firstAttribute="top" secondItem="SYI-El-d8a" secondAttribute="top" constant="20" id="efr-bp-88r"/>
+                                        <constraint firstItem="xfq-UG-zTj" firstAttribute="leading" secondItem="SYI-El-d8a" secondAttribute="leading" constant="20" id="f0l-J6-mgU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rnf-xR-wnZ" secondAttribute="bottom" constant="50" id="qsG-4j-Cny"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="isDone" destination="rnf-xR-wnZ" id="eVJ-UE-RNM"/>
+                                    <outlet property="itemTitle" destination="xfl-kD-e1N" id="kgf-io-RMo"/>
+                                    <outlet property="updatedAt" destination="xfq-UG-zTj" id="b7x-lL-O2Y"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +76,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jgE-km-7mO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="5"/>
+            <point key="canvasLocation" x="965.64885496183206" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>
